@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
     TextView tvContador;
     Button btnContador;
+    int contador;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +25,12 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        btnContador = findViewById(R.id.btnContador);
+        tvContador = findViewById(R.id.tvContador);
 
+        btnContador.setOnClickListener(v -> {
+            contador++;
+            tvContador.setText(String.valueOf(contador));
+        });
     }
 }
